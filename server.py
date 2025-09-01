@@ -26,7 +26,7 @@ while True:
     print(f'NUEVA CONEXION: Ip Cliente: {addr[0]} - Puerto: {addr[1]} - Numero: {rand_num}')
     
     active_game = True
-    while active_game and remaining_attempts > 0:  # ← CONDICIÓN CORREGIDA
+    while active_game and remaining_attempts > 0: 
         try:
             # recibir intento del cliente
             client_response = connection_socket.recv(1024).decode().strip()
@@ -39,7 +39,6 @@ while True:
             try:
                 client_number_guess = int(client_response)
                 
-                # Verificar el intento (ORDEN CORRECTO)
                 if client_number_guess == rand_num:
                     msg = f" - Victoria. Intentos totales: {5 - remaining_attempts + 1}" 
                     connection_socket.send(msg.encode())
