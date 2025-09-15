@@ -2,7 +2,7 @@ from socket import *
 
 try:
     # ip server
-    server_address = "localhost"  
+    server_address = '200.13.4.198'  
     # puerto server
     server_port = 12000        
 
